@@ -13,6 +13,8 @@
 		6C7CE7F01CC8C8EC00C4CBA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7EE1CC8C8EC00C4CBA7 /* Main.storyboard */; };
 		6C7CE7F21CC8C8EC00C4CBA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7F11CC8C8EC00C4CBA7 /* Assets.xcassets */; };
 		6C7CE7F51CC8C8EC00C4CBA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7F31CC8C8EC00C4CBA7 /* LaunchScreen.storyboard */; };
+		6C7CE7FD1CC8CD8700C4CBA7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7CE7FC1CC8CD8700C4CBA7 /* AddressBook.framework */; };
+		6C7CE7FF1CC8CD8C00C4CBA7 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7CE7FE1CC8CD8C00C4CBA7 /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		6C7CE7F11CC8C8EC00C4CBA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C7CE7F41CC8C8EC00C4CBA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C7CE7F61CC8C8EC00C4CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C7CE7FC1CC8CD8700C4CBA7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		6C7CE7FE1CC8CD8C00C4CBA7 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C7CE7FF1CC8CD8C00C4CBA7 /* AddressBookUI.framework in Frameworks */,
+				6C7CE7FD1CC8CD8700C4CBA7 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,8 @@
 		6C7CE7D91CC8C8EB00C4CBA7 = {
 			isa = PBXGroup;
 			children = (
+				6C7CE7FE1CC8CD8C00C4CBA7 /* AddressBookUI.framework */,
+				6C7CE7FC1CC8CD8700C4CBA7 /* AddressBook.framework */,
 				6C7CE7E41CC8C8EC00C4CBA7 /* RXGetAddressBook */,
 				6C7CE7E31CC8C8EC00C4CBA7 /* Products */,
 			);
@@ -265,10 +273,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yaojin Dou (HK9KZR5X5Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yaojin Dou (HK9KZR5X5Z)";
 				INFOPLIST_FILE = RXGetAddressBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "https---www.github.com-srxboys.RXGetAddressBook";
+				PRODUCT_BUNDLE_IDENTIFIER = net.ghs.app.RXBOOK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0af056dd-6b33-4100-869d-32cbc8303269";
 			};
 			name = Debug;
 		};
@@ -277,8 +289,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RXGetAddressBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "https---www.github.com-srxboys.RXGetAddressBook";
+				PRODUCT_BUNDLE_IDENTIFIER = net.ghs.app.RXBOOK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
