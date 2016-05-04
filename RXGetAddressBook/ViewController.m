@@ -31,12 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
-    _peoplePicker.peoplePickerDelegate = self;
 }
 
 - (IBAction)getAddressBookButtonClick:(id)sender {
-    
+    _peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
+    _peoplePicker.peoplePickerDelegate = self;
     [self presentViewController:_peoplePicker animated:YES completion:nil];
 }
 
@@ -45,6 +44,7 @@
     // >= iOS8
     
     [self getPeople:person property:property identifier:identifier];
+    _peoplePicker = nil;
 }
 
 
@@ -59,12 +59,14 @@
     [self getPeople:person property:property identifier:identifier];
     
     [_peoplePicker dismissViewControllerAnimated:YES completion:nil];
+    _peoplePicker = nil;
     return NO;
 }
 
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
     NSLog(@"取消");
     [_peoplePicker dismissViewControllerAnimated:YES completion:nil];
+    _peoplePicker = nil;
 }
 
 
