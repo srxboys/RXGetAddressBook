@@ -280,7 +280,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.ghs.app.RXBOOK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0af056dd-6b33-4100-869d-32cbc8303269";
+				PROVISIONING_PROFILE = "2a8391eb-a839-4696-a70e-05f83712b0a4";
 			};
 			name = Debug;
 		};
@@ -315,6 +315,7 @@
 				6C7CE7FB1CC8C8EC00C4CBA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

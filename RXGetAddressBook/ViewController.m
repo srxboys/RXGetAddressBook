@@ -31,11 +31,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
+    _peoplePicker.peoplePickerDelegate = self;
 }
 
 - (IBAction)getAddressBookButtonClick:(id)sender {
-    _peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
-    _peoplePicker.peoplePickerDelegate = self;
+    
     [self presentViewController:_peoplePicker animated:YES completion:nil];
 }
 
