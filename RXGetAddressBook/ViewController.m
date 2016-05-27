@@ -82,6 +82,10 @@
 
 - (void)getPeople:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
     
+    //获取名字全程
+    NSString * fullName = (__bridge NSString *)(ABRecordCopyCompositeName(person));
+    
+    //用下面的 比较灵活
     NSString * nameStr = nil;
     //名字获取
     NSString *firstName = CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
