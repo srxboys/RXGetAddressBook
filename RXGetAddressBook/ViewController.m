@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #define SYSTEMVERSION   [UIDevice currentDevice].systemVersion
-#define iOS9Later ([SYSTEMVERSION floatValue] > 9.0)
+#define iOS9Later ([SYSTEMVERSION floatValue] >= 9.0)
 
 #import "RXAddressiOS10.h"
 #import "RXAddressiOS9.h"
