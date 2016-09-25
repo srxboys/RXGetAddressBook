@@ -8,17 +8,16 @@
 
 #import "ViewController.h"
 
-//#if __IPHONE_9_0
-//    #import <Contacts/Contacts.h>
-//    #import <ContactsUI/ContactsUI.h>
-//#else
-#import <AddressBook/AddressBook.h>
-#import <AddressBookUI/AddressBookUI.h>
-//#endif
+#define SYSTEMVERSION   [UIDevice currentDevice].systemVersion
+#define iOS9Later ([SYSTEMVERSION floatValue] > 9.0)
 
-@interface ViewController ()<ABPeoplePickerNavigationControllerDelegate>
-{
-    ABPeoplePickerNavigationController * _peoplePicker;
+#import "RXAddressiOS10.h"
+#import "RXAddressiOS9.h"
+
+
+@interface ViewController () {
+    RXAddressiOS9 * _objct9;
+    RXAddressiOS10 * _objct10;
 }
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
@@ -30,110 +29,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    __weak typeof(self)weakSelf = self;
+    
+    _objct10 = [[RXAddressiOS10 alloc] init];
+    _objct10.complete = ^(BOOL status, NSString * phoneNum, NSString * nameString) {
+        if(status) {
+            weakSelf.phoneLabel.text = phoneNum;
+        }
+        
+        weakSelf.nameLabel.text = nameString;
+    };
+    _objct9 = [[RXAddressiOS9 alloc] init];
+    _objct9.complete = ^(BOOL status, NSString * phoneNum, NSString * nameString) {
+        if(status) {
+            weakSelf.phoneLabel.text = phoneNum;
+        }
+        weakSelf.nameLabel.text = nameString;
+    };
 }
 
 - (IBAction)getAddressBookButtonClick:(id)sender {
-    _peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
-    _peoplePicker.peoplePickerDelegate = self;
-    [self presentViewController:_peoplePicker animated:YES completion:nil];
-}
-
-#pragma mark -- ABPeoplePickerNavigationControllerDelegate
-- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
-    // >= iOS8
-    
-    [self getPeople:person property:property identifier:identifier];
-    _peoplePicker = nil;
-}
-
-
-
-- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person  {
-    NSLog(@"person=%@", person);
-    return YES;
-}
-
-- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
-    //< iOS8
-    [self getPeople:person property:property identifier:identifier];
-    
-    [_peoplePicker dismissViewControllerAnimated:YES completion:nil];
-    _peoplePicker = nil;
-    return NO;
-}
-
-- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
-    NSLog(@"取消");
-    [_peoplePicker dismissViewControllerAnimated:YES completion:nil];
-    _peoplePicker = nil;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-- (void)getPeople:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
-    
-    //获取名字全程
-    NSString * fullName = (__bridge NSString *)(ABRecordCopyCompositeName(person));
-    
-    //用下面的 比较灵活
-    NSString * nameStr = nil;
-    //名字获取
-    NSString *firstName = CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
-     NSString *lastname = (__bridge NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
-    NSString *middlename = (__bridge NSString*)ABRecordCopyValue(person, kABPersonMiddleNameProperty);
-    
-    if(firstName != nil) {
-        nameStr = firstName;
-    }
-    else if(lastname != nil) {
-        nameStr = lastname;
+    if(iOS9Later) {
+        
+        [_objct10 getAddress:self];
     }
     else {
-        nameStr = middlename;
+        
+        [_objct9 getAddress:self];
     }
-    _nameLabel.text = nameStr;
-    
-    NSLog(@"person=%@==property=%d==identifier=%d", person, property, identifier);
-    
-    //获取电话号码
-    ABMultiValueRef valuesRef = ABRecordCopyValue(person, kABPersonPhoneProperty);
-    CFIndex index = ABMultiValueGetIndexForIdentifier(valuesRef,identifier);
-    CFStringRef telValue = ABMultiValueCopyValueAtIndex(valuesRef,index);
-    
-    NSString * phoneString = (__bridge NSString *)telValue;
-    phoneString = [phoneString stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    
-    [self showPhoneNumLabel:phoneString];
 }
 
-- (void)showPhoneNumLabel:(NSString *)string {
-    if(![self checkPhoneNum:string]) {
-        NSLog(@"不是11位手机号");
-    }
-    
-    _phoneLabel.text = string;
-}
-
-
-//是否为手机号码
-- (BOOL)checkPhoneNum:(NSString *)str {
-    NSString *regex = @"1[0-9]{10}";
-    
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    
-    BOOL isMatch = [pred evaluateWithObject:str];
-    return isMatch;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
