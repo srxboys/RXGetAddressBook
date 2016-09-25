@@ -4,18 +4,40 @@
 
 -
 ```objc
-    /**
-    *这里为什么注释掉
-    *--如果iOS版本`<9`，就会崩溃 找不到 Contacts 系统库文件
-    */
+    //初始化对象 在viewDidLoad
+   __weak typeof(self)weakSelf = self;
+    
+    //iOS >=iOS9
+    _objct10 = [[RXAddressiOS10 alloc] init];
+    _objct10.complete = ^(BOOL status, NSString * phoneNum, NSString * nameString) {
+        if(status) {
+            weakSelf.phoneLabel.text = phoneNum;
+        }
+        
+        weakSelf.nameLabel.text = nameString;
+    };
+    
+    //iOS < iOS9
+    _objct9 = [[RXAddressiOS9 alloc] init];
+    _objct9.complete = ^(BOOL status, NSString * phoneNum, NSString * nameString) {
+        if(status) {
+            weakSelf.phoneLabel.text = phoneNum;
+        }
+        weakSelf.nameLabel.text = nameString;
+    };
+    
+    
+    
+    //调用通讯录 方法
+    if(iOS9Later) {
+        //iOS >=iOS9
+        [_objct10 getAddress:self];
+    }
+    else {
+        //iOS < iOS9
+        [_objct9 getAddress:self];
+    }
 
-    //#if __IPHONE_9_0
-    //    #import <Contacts/Contacts.h>
-    //    #import <ContactsUI/ContactsUI.h>
-    //#else
-    #import <AddressBook/AddressBook.h>
-    #import <AddressBookUI/AddressBookUI.h>
-    //#endif
 ```
 -
 ###提供判断是否为`11`位的手机号`正则表达式`判断
