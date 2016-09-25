@@ -6,11 +6,11 @@
 //  Copyright © 2016年 srxboys. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 typedef void(^BlockAddress10)(BOOL status, NSString * phoneNum, NSString * nameString);
 
-@interface RXAddressiOS10 : UIView
+@interface RXAddressiOS10 : NSObject
 
 @property (nonatomic, copy) BlockAddress10 complete;
 - (void)getAddress:(id)controller;

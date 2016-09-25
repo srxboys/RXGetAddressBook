@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #define SYSTEMVERSION   [UIDevice currentDevice].systemVersion
-#define iOS9Later ([SYSTEMVERSION floatValue] >= 9.0)
+#define iOS9OrLater ([SYSTEMVERSION floatValue] >= 9.0)
 
 #import "RXAddressiOS10.h"
 #import "RXAddressiOS9.h"
@@ -50,7 +50,7 @@
 }
 
 - (IBAction)getAddressBookButtonClick:(id)sender {
-    if(iOS9Later) {
+    if(iOS9OrLater) {
         
         [_objct10 getAddress:self];
     }
