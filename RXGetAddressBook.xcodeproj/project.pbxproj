@@ -15,9 +15,9 @@
 		6C7CE7F51CC8C8EC00C4CBA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7F31CC8C8EC00C4CBA7 /* LaunchScreen.storyboard */; };
 		6C7CE7FD1CC8CD8700C4CBA7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7CE7FC1CC8CD8700C4CBA7 /* AddressBook.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C7CE7FF1CC8CD8C00C4CBA7 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7CE7FE1CC8CD8C00C4CBA7 /* AddressBookUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6C9A23061DC348C70022C86D /* RXAddressiOS9.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9A23031DC348C70022C86D /* RXAddressiOS9.m */; };
+		6C9A23071DC348C70022C86D /* RXAddressiOS10.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9A23051DC348C70022C86D /* RXAddressiOS10.m */; };
 		6CF94CCC1D9769890099ED53 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF94CCA1D9769890099ED53 /* ContactsUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		6CF94CCF1D976A780099ED53 /* RXAddressiOS9.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF94CCE1D976A780099ED53 /* RXAddressiOS9.m */; };
-		6CF94CD21D976A830099ED53 /* RXAddressiOS10.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF94CD11D976A830099ED53 /* RXAddressiOS10.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +33,12 @@
 		6C7CE7F61CC8C8EC00C4CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C7CE7FC1CC8CD8700C4CBA7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6C7CE7FE1CC8CD8C00C4CBA7 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		6C9A23021DC348C70022C86D /* RXAddressiOS9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressiOS9.h; sourceTree = "<group>"; };
+		6C9A23031DC348C70022C86D /* RXAddressiOS9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressiOS9.m; sourceTree = "<group>"; };
+		6C9A23041DC348C70022C86D /* RXAddressiOS10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressiOS10.h; sourceTree = "<group>"; };
+		6C9A23051DC348C70022C86D /* RXAddressiOS10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressiOS10.m; sourceTree = "<group>"; };
 		6CF94CC91D9769890099ED53 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		6CF94CCA1D9769890099ED53 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
-		6CF94CCD1D976A780099ED53 /* RXAddressiOS9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressiOS9.h; sourceTree = "<group>"; };
-		6CF94CCE1D976A780099ED53 /* RXAddressiOS9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressiOS9.m; sourceTree = "<group>"; };
-		6CF94CD01D976A830099ED53 /* RXAddressiOS10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressiOS10.h; sourceTree = "<group>"; };
-		6CF94CD11D976A830099ED53 /* RXAddressiOS10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressiOS10.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,14 +78,14 @@
 		6C7CE7E41CC8C8EC00C4CBA7 /* RXGetAddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				6C9A23021DC348C70022C86D /* RXAddressiOS9.h */,
+				6C9A23031DC348C70022C86D /* RXAddressiOS9.m */,
+				6C9A23041DC348C70022C86D /* RXAddressiOS10.h */,
+				6C9A23051DC348C70022C86D /* RXAddressiOS10.m */,
 				6C7CE7E81CC8C8EC00C4CBA7 /* AppDelegate.h */,
 				6C7CE7E91CC8C8EC00C4CBA7 /* AppDelegate.m */,
 				6C7CE7EB1CC8C8EC00C4CBA7 /* ViewController.h */,
 				6C7CE7EC1CC8C8EC00C4CBA7 /* ViewController.m */,
-				6CF94CCD1D976A780099ED53 /* RXAddressiOS9.h */,
-				6CF94CCE1D976A780099ED53 /* RXAddressiOS9.m */,
-				6CF94CD01D976A830099ED53 /* RXAddressiOS10.h */,
-				6CF94CD11D976A830099ED53 /* RXAddressiOS10.m */,
 				6C7CE7EE1CC8C8EC00C4CBA7 /* Main.storyboard */,
 				6C7CE7F11CC8C8EC00C4CBA7 /* Assets.xcassets */,
 				6C7CE7F31CC8C8EC00C4CBA7 /* LaunchScreen.storyboard */,
@@ -176,8 +176,8 @@
 			files = (
 				6C7CE7ED1CC8C8EC00C4CBA7 /* ViewController.m in Sources */,
 				6C7CE7EA1CC8C8EC00C4CBA7 /* AppDelegate.m in Sources */,
-				6CF94CD21D976A830099ED53 /* RXAddressiOS10.m in Sources */,
-				6CF94CCF1D976A780099ED53 /* RXAddressiOS9.m in Sources */,
+				6C9A23071DC348C70022C86D /* RXAddressiOS10.m in Sources */,
+				6C9A23061DC348C70022C86D /* RXAddressiOS9.m in Sources */,
 				6C7CE7E71CC8C8EC00C4CBA7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
