@@ -3,6 +3,13 @@
 * 亲测 实现  > iOS6
 
 -
+## POD
+
+```objc
+     pod 'RXGetAddressBook'
+```
+
+-
 ```objc
     //初始化对象 在viewDidLoad
    __weak typeof(self)weakSelf = self;
