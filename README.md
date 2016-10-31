@@ -10,6 +10,7 @@
 ```
 
 -
+## EXAMPLE
 ```objc
     //初始化对象 在viewDidLoad
    __weak typeof(self)weakSelf = self;
