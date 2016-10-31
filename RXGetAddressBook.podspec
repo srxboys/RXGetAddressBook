@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/srxboys/RXGetAddressBook'
   #s.screenshots  = 'https://github.com/srxboys/RXGetAddressBook/blob/master/srxboys_RXGetAddressBook.gif'
   s.license      = 'MIT'
-  s.author       = {'srxboys' => 'sunmengxin@126.com'}
+  s.author       = {'srxboys' => 'srxboys@126.com'}
   s.platform     = :ios, '6.0'
   #s.ios.deployment_target = '6.0'
   #s.osx.deployment_target = '10.8'
