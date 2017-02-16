@@ -7,6 +7,16 @@
 
 ```objc
      pod 'RXGetAddressBook'
+     
+     //info.plist 设置
+     //xml:
+     <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<string>需要通讯录权限</string>
+</plist>
+     //直观
+Privacy - Contacts Usage Description  ->  string : 需要通讯录权限
 ```
 
 -
