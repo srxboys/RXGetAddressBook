@@ -7,21 +7,18 @@
 //
 
 #import "ViewController.h"
+#import "RXAddressBook.h"
 
-#define SYSTEMVERSION   [UIDevice currentDevice].systemVersion
-#define iOS9OrLater ([SYSTEMVERSION floatValue] >= 9.0)
-
-#import "RXAddressiOS10.h"
-#import "RXAddressiOS9.h"
-
-
-@interface ViewController () {
-    RXAddressiOS9 * _objct9;
-    RXAddressiOS10 * _objct10;
+@interface ViewController ()<RXAddressBookDelegate>
+{
+    
 }
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 - (IBAction)getAddressBookButtonClick:(id)sender;
+
+
+@property (nonatomic, strong) RXAddressBook * addressBook;
 
 @end
 
@@ -30,34 +27,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    __weak typeof(self)weakSelf = self;
-    
-    _objct10 = [[RXAddressiOS10 alloc] init];
-    _objct10.complete = ^(BOOL status, NSString * phoneNum, NSString * nameString) {
-        if(status) {
-            weakSelf.phoneLabel.text = phoneNum;
-        }
-        
-        weakSelf.nameLabel.text = nameString;
-    };
-    _objct9 = [[RXAddressiOS9 alloc] init];
-    _objct9.complete = ^(BOOL status, NSString * phoneNum, NSString * nameString) {
-        if(status) {
-            weakSelf.phoneLabel.text = phoneNum;
-        }
-        weakSelf.nameLabel.text = nameString;
-    };
+    _addressBook = [[RXAddressBook alloc] init];
+    _addressBook.delegate = self;
 }
 
 - (IBAction)getAddressBookButtonClick:(id)sender {
-    if(iOS9OrLater) {
-        
-        [_objct10 getAddress:self];
-    }
-    else {
-        
-        [_objct9 getAddress:self];
-    }
+    [self.addressBook getAddressBookInController:self];
+}
+
+- (void)addressBookComplete:(NSString *)phoneString nameString:(NSString *)nameString {
+    NSString * phone = [RXAddressBook formatPhoneString:RXNULLSTR(phoneString)];
+    NSLog(@"phone=%@", phone);
+//    if([RXAddressBook checkPhoneString:phone]) {
+//        self.phoneLabel.text = phoneString;
+//    }
+    self.phoneLabel.text = RXNULLSTR(phoneString);
+    self.nameLabel.text = RXNULLSTR(nameString);
+}
+
+- (void)addressBookComplete:(NSDictionary *)allDataSource {
+    //点击了哪里，哪里的数据返回
+//    NSLog(@"%@", allDataSource);
 }
 
 

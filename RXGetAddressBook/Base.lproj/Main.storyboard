@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <deployment version="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,55 +23,55 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19C-m9-eHb">
                                 <rect key="frame" x="5" y="70" width="60" height="28"/>
-                                <color key="backgroundColor" red="0.75366586538461533" green="0.6392618159105643" blue="0.67228555911126464" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.75366586538461533" green="0.6392618159105643" blue="0.67228555911126464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="0Vc-SA-T4n"/>
                                     <constraint firstAttribute="width" constant="60" id="T9c-zk-1Rb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGN-5s-tNI">
                                 <rect key="frame" x="66" y="70" width="304" height="28"/>
-                                <color key="backgroundColor" red="0.90066105769230775" green="0.76394361175756553" blue="0.80340831467989193" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90066105769230775" green="0.76394361175756553" blue="0.80340831467989193" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="aft-Yc-bl2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxY-uk-RWE">
                                 <rect key="frame" x="5" y="105" width="60" height="28"/>
-                                <color key="backgroundColor" red="0.75366586538461533" green="0.6392618159105643" blue="0.67228555911126464" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.75366586538461533" green="0.6392618159105643" blue="0.67228555911126464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="1zt-78-MlU"/>
                                     <constraint firstAttribute="width" constant="60" id="6bX-T7-IYL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn1-3Y-oPH">
                                 <rect key="frame" x="66" y="105" width="304" height="28"/>
-                                <color key="backgroundColor" red="0.90066105770000005" green="0.76394361180000003" blue="0.80340831469999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90066105770000005" green="0.76394361180000003" blue="0.80340831469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="D3I-P1-eSj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-hA-hXt">
-                                <rect key="frame" x="67" y="156" width="240" height="35"/>
-                                <color key="backgroundColor" red="0.5" green="0.11395104057349953" blue="0.26002090218912111" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="67.5" y="156" width="240" height="35"/>
+                                <color key="backgroundColor" red="0.5" green="0.11395104057349953" blue="0.26002090218912111" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="LKC-1l-gat"/>
                                     <constraint firstAttribute="height" constant="35" id="imd-Z9-G2O"/>
                                 </constraints>
                                 <state key="normal" title="获取">
-                                    <color key="titleColor" red="0.65194645817537322" green="0.64758693726112748" blue="0.75366586538461533" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.65194645817537322" green="0.64758693726112748" blue="0.75366586538461533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="getAddressBookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zrY-Oi-qcb"/>
@@ -75,16 +79,16 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获取系统通讯录联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-b7-dos">
                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Jzl-0r-Hah"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.41072680201212064" green="0.75937286794782899" blue="0.80022035256410251" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.41072680201212064" green="0.75937286794782899" blue="0.80022035256410251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iGN-5s-tNI" secondAttribute="trailing" constant="5" id="518-Lu-fPY"/>
                             <constraint firstItem="IxY-uk-RWE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="CzX-he-OGh"/>
@@ -110,7 +114,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="nameLabel" destination="iGN-5s-tNI" id="MKi-aQ-UD7"/>
                         <outlet property="phoneLabel" destination="hn1-3Y-oPH" id="hbx-aZ-VwF"/>
