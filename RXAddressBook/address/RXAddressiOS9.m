@@ -92,69 +92,71 @@
     }
     
     if([self.delegate respondsToSelector:@selector(addressBookComplete:nameString:)]) {
-        [self.delegate addressBookComplete:RXNULLSTR(phoneString) nameString:RXNULLSTR(nameStr)];
+        [self.delegate addressBookComplete:RX_NULL_STR(phoneString) nameString:RX_NULL_STR(nameStr)];
     }
     
-    NSDictionary * addressDict = nil;
-    valuesRef = [self getMultiValueWith:person property:kABPersonAddressProperty identifier:identifier];
-    if(valuesRef) {
-        addressDict = (__bridge NSDictionary *)valuesRef;
-        
-        NSMutableDictionary * newDict = [[NSMutableDictionary alloc] init];
-        [newDict setObject:RXNULLSTR(addressDict[@"Street"]) forKey:@"street"];
-        [newDict setObject:RXNULLSTR(addressDict[@"City"]) forKey:@"city"];
-        [newDict setObject:RXNULLSTR(addressDict[@"State"]) forKey:@"state"];
-        [newDict setObject:RXNULLSTR(addressDict[@"Country"]) forKey:@"country"];
-        [newDict setObject:RXNULLSTR(addressDict[@"CountryCode"]) forKey:@"countryCode"];
-        [newDict setObject:RXNULLSTR(addressDict[@""]) forKey:@"postalCode"];
-        [newDict setObject:RXNULLSTR(addressDict[@""]) forKey:@"formattedAddress"];
-        addressDict = newDict;
-    }
-    
-    NSString * company = nil;
-    valuesRef = ABRecordCopyValue(person, kABPersonOrganizationProperty);
-    if(valuesRef) {
-        company = (__bridge NSString *)valuesRef;
-    }
-    
-    NSData * image = nil;
-    if(ABPersonHasImageData(person)) {
-        CFDataRef dataRef = ABPersonCopyImageData(person);
-        if(dataRef) {
-            image = (__bridge NSData*)dataRef;
-        }
-    }
-
-    NSString * email = nil;
-    valuesRef = [self getMultiValueWith:person property:kABPersonEmailProperty identifier:identifier];
-    if(valuesRef) {
-        email  = (__bridge NSString *)valuesRef;
-    }
-    
-    NSString * url = nil;
-    valuesRef = ABRecordCopyValue(person, kABPersonURLProperty);
-    if(valuesRef) {
-        url  = (__bridge NSString *)valuesRef;
-    }
-    
-    
-    NSString * note = CFBridgingRelease(ABRecordCopyValue(person, kABPersonNoteProperty));
-    
-    NSString * partment = CFBridgingRelease(ABRecordCopyValue(person, kABPersonDepartmentProperty));
-    
-    NSDictionary * allDiction = @{
-                                  RX_AD_K_FULLNAME:RXNULLSTR(fullName),
-                                  RX_AD_K_NAME:RXNULLSTR(firstName),
-                                  RX_AD_K_SURNMAE:RXNULLSTR(lastname),
-                                  RX_AD_K_COMPANY:RXNULLSTR(company),
-                                  RX_AD_K_PHONE:RXNULLSTR(phoneString),
-                                  RX_AD_K_ADDRESS:RXNULLDIC(addressDict),
-                                  RX_AD_K_URL:RXNULLSTR(url),
-                                  RX_AD_K_EIMAIL:RXNULLSTR(email),
-                                  RX_AD_K_IMAGE:RXNULLOBJ(image),
-                                  RX_AD_K_NOTE:RXNULLSTR(note)
-                                  };
     if([self.delegate respondsToSelector:@selector(addressBookComplete:)]){
+    
+        NSDictionary * addressDict = nil;
+        valuesRef = [self getMultiValueWith:person property:kABPersonAddressProperty identifier:identifier];
+        if(valuesRef) {
+            addressDict = (__bridge NSDictionary *)valuesRef;
+            
+            NSMutableDictionary * newDict = [[NSMutableDictionary alloc] init];
+            [newDict setObject:RX_NULL_STR(addressDict[@"Street"]) forKey:@"street"];
+            [newDict setObject:RX_NULL_STR(addressDict[@"City"]) forKey:@"city"];
+            [newDict setObject:RX_NULL_STR(addressDict[@"State"]) forKey:@"state"];
+            [newDict setObject:RX_NULL_STR(addressDict[@"Country"]) forKey:@"country"];
+            [newDict setObject:RX_NULL_STR(addressDict[@"CountryCode"]) forKey:@"countryCode"];
+            [newDict setObject:RX_NULL_STR(addressDict[@""]) forKey:@"postalCode"];
+            [newDict setObject:RX_NULL_STR(addressDict[@""]) forKey:@"formattedAddress"];
+            addressDict = newDict;
+        }
+        
+        NSString * company = nil;
+        valuesRef = ABRecordCopyValue(person, kABPersonOrganizationProperty);
+        if(valuesRef) {
+            company = (__bridge NSString *)valuesRef;
+        }
+        
+        NSData * image = nil;
+        if(ABPersonHasImageData(person)) {
+            CFDataRef dataRef = ABPersonCopyImageData(person);
+            if(dataRef) {
+                image = (__bridge NSData*)dataRef;
+            }
+        }
+
+        NSString * email = nil;
+        valuesRef = [self getMultiValueWith:person property:kABPersonEmailProperty identifier:identifier];
+        if(valuesRef) {
+            email  = (__bridge NSString *)valuesRef;
+        }
+        
+        NSString * url = nil;
+        valuesRef = ABRecordCopyValue(person, kABPersonURLProperty);
+        if(valuesRef) {
+            url  = (__bridge NSString *)valuesRef;
+        }
+        
+        
+        NSString * note = CFBridgingRelease(ABRecordCopyValue(person, kABPersonNoteProperty));
+        
+    //    NSString * partment = CFBridgingRelease(ABRecordCopyValue(person, kABPersonDepartmentProperty));
+        
+        NSDictionary * allDiction = @{
+                                      RX_AD_K_FULLNAME:RX_NULL_STR(fullName),
+                                      RX_AD_K_NAME:RX_NULL_STR(firstName),
+                                      RX_AD_K_SURNMAE:RX_NULL_STR(lastname),
+                                      RX_AD_K_COMPANY:RX_NULL_STR(company),
+                                      RX_AD_K_PHONE:RX_NULL_STR(phoneString),
+                                      RX_AD_K_ADDRESS:RX_NULL_DIC(addressDict),
+                                      RX_AD_K_URL:RX_NULL_STR(url),
+                                      RX_AD_K_EIMAIL:RX_NULL_STR(email),
+                                      RX_AD_K_IMAGE:RX_NULL_OBJ(image),
+                                      RX_AD_K_NOTE:RX_NULL_STR(note)
+                                      };
+    
         [self.delegate addressBookComplete:allDiction];
     }
 }

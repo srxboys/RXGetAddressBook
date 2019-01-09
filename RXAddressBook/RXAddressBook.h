@@ -13,6 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos)
+
 @interface RXAddressBook : NSObject
 @property (nonatomic, weak) id<RXAddressBookDelegate> delegate;
 - (void)getAddressBookInController:(UIViewController *)controller;

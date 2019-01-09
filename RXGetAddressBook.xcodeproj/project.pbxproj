@@ -13,12 +13,11 @@
 		6C7CE7F01CC8C8EC00C4CBA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7EE1CC8C8EC00C4CBA7 /* Main.storyboard */; };
 		6C7CE7F21CC8C8EC00C4CBA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7F11CC8C8EC00C4CBA7 /* Assets.xcassets */; };
 		6C7CE7F51CC8C8EC00C4CBA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7F31CC8C8EC00C4CBA7 /* LaunchScreen.storyboard */; };
-		B84FCBE421E5FA6D00B64051 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84FCBE321E5FA6D00B64051 /* ContactsUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B84FCBE421E5FA6D00B64051 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84FCBE321E5FA6D00B64051 /* ContactsUI.framework */; };
 		B84FCBED21E5FE0900B64051 /* RXAddressiOS9.m in Sources */ = {isa = PBXBuildFile; fileRef = B84FCBEA21E5FE0900B64051 /* RXAddressiOS9.m */; };
 		B84FCBEE21E5FE0900B64051 /* RXAddressiOS10.m in Sources */ = {isa = PBXBuildFile; fileRef = B84FCBEB21E5FE0900B64051 /* RXAddressiOS10.m */; };
 		B8ADE79B21C24EDF003F5ADB /* RXAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ADE79621C24EDF003F5ADB /* RXAddressBook.m */; };
 		B8ADE7A321C27490003F5ADB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8ADE7A121C27490003F5ADB /* AddressBookUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B8ADE7A421C27490003F5ADB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8ADE7A221C27490003F5ADB /* AddressBook.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B84FCBE421E5FA6D00B64051 /* ContactsUI.framework in Frameworks */,
 				B8ADE7A321C27490003F5ADB /* AddressBookUI.framework in Frameworks */,
-				B8ADE7A421C27490003F5ADB /* AddressBook.framework in Frameworks */,
+				B84FCBE421E5FA6D00B64051 /* ContactsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,10 +205,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C7CE7ED1CC8C8EC00C4CBA7 /* ViewController.m in Sources */,
+				B84FCBED21E5FE0900B64051 /* RXAddressiOS9.m in Sources */,
 				B84FCBEE21E5FE0900B64051 /* RXAddressiOS10.m in Sources */,
 				B8ADE79B21C24EDF003F5ADB /* RXAddressBook.m in Sources */,
 				6C7CE7EA1CC8C8EC00C4CBA7 /* AppDelegate.m in Sources */,
-				B84FCBED21E5FE0900B64051 /* RXAddressiOS9.m in Sources */,
 				6C7CE7E71CC8C8EC00C4CBA7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

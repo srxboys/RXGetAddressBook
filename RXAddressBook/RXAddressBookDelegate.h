@@ -18,13 +18,13 @@
 
 @end
 
-#define RXSTRENABLE(str) str && [str isKindOfClass:[NSString class]] && [str length] ? YES:NO
+#define RX_STR_ENABLE(str) str && [str isKindOfClass:[NSString class]] && [str length] ? YES:NO
 
 
-#define RXNULLSTR(str) str?str:@""
-#define RXNULLDIC(dic) dic?dic:@{}
-#define RXNULLARR(arr) arr?arr:@[]
-#define RXNULLOBJ(obj) obj?obj:[NSObject new]
+#define RX_NULL_STR(str) str?str:@""
+#define RX_NULL_DIC(dic) dic?dic:@{}
+#define RX_NULL_ARR(arr) arr?arr:@[]
+#define RX_NULL_OBJ(obj) obj?obj:[NSObject new]
 
 
 #pragma mark - allDataSource allKeys -

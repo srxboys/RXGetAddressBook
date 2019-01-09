@@ -54,83 +54,82 @@
 
     
     if([self.delegate respondsToSelector:@selector(addressBookComplete:nameString:)]) {
-        [self.delegate addressBookComplete:RXNULLSTR(phoneString) nameString:RXNULLSTR(nameString)];
+        [self.delegate addressBookComplete:RX_NULL_STR(phoneString) nameString:RX_NULL_STR(nameString)];
     }
     
-    NSDictionary * addressDict = nil;
-    if([contactProperty.value isKindOfClass:[CNPostalAddress class]]) {
-        //key == postalAddresses;
-        CNPostalAddress * address = (CNPostalAddress *)contactProperty.value;
-        if(address) {
-            NSMutableDictionary * newDict = [[NSMutableDictionary alloc] init];
-            [newDict setObject:RXNULLSTR(address.street) forKey:@"street"];
-            [newDict setObject:RXNULLSTR(address.city) forKey:@"city"];
-            [newDict setObject:RXNULLSTR(address.state) forKey:@"state"];
-            [newDict setObject:RXNULLSTR(address.country) forKey:@"country"];
-            [newDict setObject:RXNULLSTR(address.ISOCountryCode) forKey:@"countryCode"];
-            [newDict setObject:RXNULLSTR(address.postalCode) forKey:@"postalCode"];
-            [newDict setObject:RXNULLSTR(@"") forKey:@"formattedAddress"];
-            
-            addressDict = newDict;
-        }
-    }
-    
-    NSString * company = contactProperty.contact.organizationName;
-    
-    NSData * image = nil;
-    @try {
-        //contactProperty.contact.imageData; //太大了
-        image = contactProperty.contact.thumbnailImageData; ///缩略图
-    } @catch (NSException *exception) {
-#if DEBUG
-        NSLog(@"image exception= %@", exception.description);
-#endif
-    }
-    NSString * note = nil;
-    @try {
-        note = contactProperty.contact.note;
-        if(![note isKindOfClass:[NSString class]]) note = nil;
-        NSLog(@"note=%@", note);
-    } @catch (NSException *exception) {
-#if DEBUG
-        NSLog(@"note exception= %@", exception.description);
-#endif
-    }
-
-    
-    
-    
-    NSString * url = nil;
-    NSString * email = nil;
-    
-    if([contactProperty.value isKindOfClass:[NSString class]]) {
-        if([contactProperty.key isEqualToString:@"urlAddresses"]) {
-            url = contactProperty.value;
-        }
-        else if([contactProperty.key isEqualToString:@"emailAddresses"]) {
-            email = contactProperty.value;
-        }
-    }
-    
-    NSString * partment = nil;
-    if([contactProperty.value isKindOfClass:[CNContactRelation class]]) {
-        CNContactRelation * releation = contactProperty.value;
-        partment = releation.name;
-    }
-    
-    NSDictionary * allDiction = @{
-                                  RX_AD_K_FULLNAME:RXNULLSTR(nameString),
-                                  RX_AD_K_NAME:RXNULLSTR(givenName),
-                                  RX_AD_K_SURNMAE:RXNULLSTR(familyName),
-                                  RX_AD_K_COMPANY:RXNULLSTR(company),
-                                  RX_AD_K_PHONE:RXNULLSTR(phoneString),
-                                  RX_AD_K_ADDRESS:RXNULLSTR(addressDict),
-                                  RX_AD_K_URL:RXNULLSTR(url),
-                                  RX_AD_K_EIMAIL:RXNULLSTR(email),
-                                  RX_AD_K_IMAGE:RXNULLOBJ(image),
-                                  RX_AD_K_NOTE:RXNULLSTR(note)
-                                  };
     if([self.delegate respondsToSelector:@selector(addressBookComplete:)]){
+    
+        NSDictionary * addressDict = nil;
+        if([contactProperty.value isKindOfClass:[CNPostalAddress class]]) {
+            //key == postalAddresses;
+            CNPostalAddress * address = (CNPostalAddress *)contactProperty.value;
+            if(address) {
+                NSMutableDictionary * newDict = [[NSMutableDictionary alloc] init];
+                [newDict setObject:RX_NULL_STR(address.street) forKey:@"street"];
+                [newDict setObject:RX_NULL_STR(address.city) forKey:@"city"];
+                [newDict setObject:RX_NULL_STR(address.state) forKey:@"state"];
+                [newDict setObject:RX_NULL_STR(address.country) forKey:@"country"];
+                [newDict setObject:RX_NULL_STR(address.ISOCountryCode) forKey:@"countryCode"];
+                [newDict setObject:RX_NULL_STR(address.postalCode) forKey:@"postalCode"];
+                [newDict setObject:RX_NULL_STR(@"") forKey:@"formattedAddress"];
+                
+                addressDict = newDict;
+            }
+        }
+        
+        NSString * company = contactProperty.contact.organizationName;
+        
+        NSData * image = nil;
+        @try {
+            //contactProperty.contact.imageData; //太大了
+            image = contactProperty.contact.thumbnailImageData; ///缩略图
+        } @catch (NSException *exception) {
+    #if DEBUG
+            NSLog(@"image exception= %@", exception.description);
+    #endif
+        }
+        NSString * note = nil;
+        @try {
+            note = contactProperty.contact.note;
+            if(![note isKindOfClass:[NSString class]]) note = nil;
+            NSLog(@"note=%@", note);
+        } @catch (NSException *exception) {
+    #if DEBUG
+            NSLog(@"note exception= %@", exception.description);
+    #endif
+        }
+        
+        NSString * url = nil;
+        NSString * email = nil;
+        
+        if([contactProperty.value isKindOfClass:[NSString class]]) {
+            if([contactProperty.key isEqualToString:@"urlAddresses"]) {
+                url = contactProperty.value;
+            }
+            else if([contactProperty.key isEqualToString:@"emailAddresses"]) {
+                email = contactProperty.value;
+            }
+        }
+        
+        NSString * partment = nil;
+        if([contactProperty.value isKindOfClass:[CNContactRelation class]]) {
+            CNContactRelation * releation = contactProperty.value;
+            partment = releation.name;
+        }
+        
+        NSDictionary * allDiction = @{
+                                      RX_AD_K_FULLNAME:RX_NULL_STR(nameString),
+                                      RX_AD_K_NAME:RX_NULL_STR(givenName),
+                                      RX_AD_K_SURNMAE:RX_NULL_STR(familyName),
+                                      RX_AD_K_COMPANY:RX_NULL_STR(company),
+                                      RX_AD_K_PHONE:RX_NULL_STR(phoneString),
+                                      RX_AD_K_ADDRESS:RX_NULL_DIC(addressDict),
+                                      RX_AD_K_URL:RX_NULL_STR(url),
+                                      RX_AD_K_EIMAIL:RX_NULL_STR(email),
+                                      RX_AD_K_IMAGE:RX_NULL_OBJ(image),
+                                      RX_AD_K_NOTE:RX_NULL_STR(note)
+                                      };
+        
         [self.delegate addressBookComplete:allDiction];
     }
 }

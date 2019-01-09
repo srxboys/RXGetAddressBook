@@ -36,13 +36,13 @@
 }
 
 - (void)addressBookComplete:(NSString *)phoneString nameString:(NSString *)nameString {
-    NSString * phone = [RXAddressBook formatPhoneString:RXNULLSTR(phoneString)];
+    NSString * phone = [RXAddressBook formatPhoneString:RX_NULL_STR(phoneString)];
     NSLog(@"phone=%@", phone);
 //    if([RXAddressBook checkPhoneString:phone]) {
 //        self.phoneLabel.text = phoneString;
 //    }
-    self.phoneLabel.text = RXNULLSTR(phoneString);
-    self.nameLabel.text = RXNULLSTR(nameString);
+    self.phoneLabel.text = RX_NULL_STR(phoneString);
+    self.nameLabel.text = RX_NULL_STR(nameString);
 }
 
 - (void)addressBookComplete:(NSDictionary *)allDataSource {
