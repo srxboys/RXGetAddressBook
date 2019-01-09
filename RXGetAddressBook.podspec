@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = 'RXGetAddressBook'
-  s.version      = '1.0.1'
+  s.version      = '1.1.0'
   s.summary      = 'Get the name and phone number of the system address book.'
   s.homepage     = 'https://github.com/srxboys/RXGetAddressBook'
   #s.screenshots  = 'https://github.com/srxboys/RXGetAddressBook/blob/master/srxboys_RXGetAddressBook.gif'
