@@ -14,8 +14,8 @@
 		6C7CE7F21CC8C8EC00C4CBA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7F11CC8C8EC00C4CBA7 /* Assets.xcassets */; };
 		6C7CE7F51CC8C8EC00C4CBA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7CE7F31CC8C8EC00C4CBA7 /* LaunchScreen.storyboard */; };
 		B84FCBE421E5FA6D00B64051 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84FCBE321E5FA6D00B64051 /* ContactsUI.framework */; };
-		B84FCBED21E5FE0900B64051 /* RXAddressiOS9.m in Sources */ = {isa = PBXBuildFile; fileRef = B84FCBEA21E5FE0900B64051 /* RXAddressiOS9.m */; };
-		B84FCBEE21E5FE0900B64051 /* RXAddressiOS10.m in Sources */ = {isa = PBXBuildFile; fileRef = B84FCBEB21E5FE0900B64051 /* RXAddressiOS10.m */; };
+		B84FCBFF21E61E5300B64051 /* RXAddressiOS9.m in Sources */ = {isa = PBXBuildFile; fileRef = B84FCBF821E61E5300B64051 /* RXAddressiOS9.m */; };
+		B84FCC0021E61E5300B64051 /* RXAddressiOS10.m in Sources */ = {isa = PBXBuildFile; fileRef = B84FCBF921E61E5300B64051 /* RXAddressiOS10.m */; };
 		B8ADE79B21C24EDF003F5ADB /* RXAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ADE79621C24EDF003F5ADB /* RXAddressBook.m */; };
 		B8ADE7A321C27490003F5ADB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8ADE7A121C27490003F5ADB /* AddressBookUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -32,11 +32,11 @@
 		6C7CE7F41CC8C8EC00C4CBA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C7CE7F61CC8C8EC00C4CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B84FCBE321E5FA6D00B64051 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
-		B84FCBE821E5FE0900B64051 /* RXAddressiOS10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressiOS10.h; sourceTree = "<group>"; };
-		B84FCBE921E5FE0900B64051 /* RXARE_Obj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXARE_Obj.h; sourceTree = "<group>"; };
-		B84FCBEA21E5FE0900B64051 /* RXAddressiOS9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressiOS9.m; sourceTree = "<group>"; };
-		B84FCBEB21E5FE0900B64051 /* RXAddressiOS10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressiOS10.m; sourceTree = "<group>"; };
-		B84FCBEC21E5FE0900B64051 /* RXAddressiOS9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressiOS9.h; sourceTree = "<group>"; };
+		B84FCBF621E61E5300B64051 /* RXAdrObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAdrObj.h; sourceTree = "<group>"; };
+		B84FCBF721E61E5300B64051 /* RXAddressiOS10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressiOS10.h; sourceTree = "<group>"; };
+		B84FCBF821E61E5300B64051 /* RXAddressiOS9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressiOS9.m; sourceTree = "<group>"; };
+		B84FCBF921E61E5300B64051 /* RXAddressiOS10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressiOS10.m; sourceTree = "<group>"; };
+		B84FCBFA21E61E5300B64051 /* RXAddressiOS9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressiOS9.h; sourceTree = "<group>"; };
 		B8ADE79221C24EDF003F5ADB /* RXAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressBook.h; sourceTree = "<group>"; };
 		B8ADE79621C24EDF003F5ADB /* RXAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAddressBook.m; sourceTree = "<group>"; };
 		B8ADE79721C24EDF003F5ADB /* RXAddressBookDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAddressBookDelegate.h; sourceTree = "<group>"; };
@@ -99,14 +99,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B84FCBE721E5FE0900B64051 /* address */ = {
+		B84FCBF521E61E5300B64051 /* address */ = {
 			isa = PBXGroup;
 			children = (
-				B84FCBE921E5FE0900B64051 /* RXARE_Obj.h */,
-				B84FCBEC21E5FE0900B64051 /* RXAddressiOS9.h */,
-				B84FCBEA21E5FE0900B64051 /* RXAddressiOS9.m */,
-				B84FCBE821E5FE0900B64051 /* RXAddressiOS10.h */,
-				B84FCBEB21E5FE0900B64051 /* RXAddressiOS10.m */,
+				B84FCBF621E61E5300B64051 /* RXAdrObj.h */,
+				B84FCBFA21E61E5300B64051 /* RXAddressiOS9.h */,
+				B84FCBF821E61E5300B64051 /* RXAddressiOS9.m */,
+				B84FCBF721E61E5300B64051 /* RXAddressiOS10.h */,
+				B84FCBF921E61E5300B64051 /* RXAddressiOS10.m */,
 			);
 			path = address;
 			sourceTree = "<group>";
@@ -117,7 +117,7 @@
 				B8ADE79221C24EDF003F5ADB /* RXAddressBook.h */,
 				B8ADE79621C24EDF003F5ADB /* RXAddressBook.m */,
 				B8ADE79721C24EDF003F5ADB /* RXAddressBookDelegate.h */,
-				B84FCBE721E5FE0900B64051 /* address */,
+				B84FCBF521E61E5300B64051 /* address */,
 			);
 			path = RXAddressBook;
 			sourceTree = "<group>";
@@ -204,11 +204,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84FCBFF21E61E5300B64051 /* RXAddressiOS9.m in Sources */,
 				6C7CE7ED1CC8C8EC00C4CBA7 /* ViewController.m in Sources */,
-				B84FCBED21E5FE0900B64051 /* RXAddressiOS9.m in Sources */,
-				B84FCBEE21E5FE0900B64051 /* RXAddressiOS10.m in Sources */,
 				B8ADE79B21C24EDF003F5ADB /* RXAddressBook.m in Sources */,
 				6C7CE7EA1CC8C8EC00C4CBA7 /* AppDelegate.m in Sources */,
+				B84FCC0021E61E5300B64051 /* RXAddressiOS10.m in Sources */,
 				6C7CE7E71CC8C8EC00C4CBA7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

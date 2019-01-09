@@ -6,11 +6,11 @@
 //  Copyright © 2016年 srxboys. All rights reserved.
 //
 
-#import "RXARE_Obj.h"
+#import "RXAdrObj.h"
 
 typedef void(^BlockAddress9)(BOOL status, NSString * phoneNum, NSString * nameString);
 
-@interface RXAddressiOS9 : NSObject<RXARE_Obj>
+@interface RXAddressiOS9 : NSObject<RXAdrObj>
 @property (nonatomic, weak) id<RXAddressBookDelegate>delegate;
 @property (nonatomic, copy) BlockAddress9 complete __deprecated_msg("废弃");
 - (void)getAddress:(id)controller;

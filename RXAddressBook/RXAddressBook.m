@@ -8,7 +8,7 @@
 
 #import "RXAddressBook.h"
 
-#import "RXARE_Obj.h"
+#import "RXAdrObj.h"
 #import "RXAddressiOS9.h"
 #import "RXAddressiOS10.h"
 
@@ -28,7 +28,7 @@ NSString * const RX_AD_K_IMAGE   = @"R_X_K_image";     ///< imageData      (Type
 NSString * const RX_AD_K_NOTE    = @"R_X_K_note";      ///< 备注            (Type = NSString)
 
 @interface RXAddressBook ()<RXAddressBookDelegate>
-@property (nonatomic, strong) id<RXARE_Obj> addressBook;
+@property (nonatomic, strong) id<RXAdrObj> addressBook;
 @end
 
 @implementation RXAddressBook
@@ -44,7 +44,7 @@ NSString * const RX_AD_K_NOTE    = @"R_X_K_note";      ///< 备注            (T
         else {
             adObjClass = RXAddressiOS9.class;
         }
-        id<RXARE_Obj> address = [[adObjClass alloc] init];
+        id<RXAdrObj> address = [[adObjClass alloc] init];
         address.delegate = self;
         _addressBook = address;
     }
