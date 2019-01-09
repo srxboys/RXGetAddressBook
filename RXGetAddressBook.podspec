@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   #s.ios.deployment_target = '6.0'
   #s.osx.deployment_target = '10.8'
   s.source       = {:git => 'https://github.com/srxboys/RXGetAddressBook.git', :tag => s.version}
-  s.source_files  = 'RXAddressBook/*.{h,m}'
-  s.exclude_files = 'Classes/Exclude'
+  s.source_files  = 'RXAddressBook/**/*.{h,m}'
+  
   s.frameworks = 'AddressBookUI', 'ContactsUI'
   s.requires_arc = true
 end
